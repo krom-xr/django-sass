@@ -1,0 +1,15 @@
+1. install sass (in ubuntu 11.10 sudo apt-get install libhaml-ruby)
+2. clone this repo to your django-project folder
+3. in settings.py add 'sass' to INSTALLED_APPS
+4. in settings.py add USE_SASS = True
+5. in template file add the following strings:
+    a) {% load sass %}
+    b) <link href="{% sass 'path/to/file.css' %}" />
+if USE_SASS == True, script will be trying to find 'path/to/file.sass' and if it exists - compile it and return 'path/to/file.css'
+if USE_SASS == False, script return only return 'path/to/file.css'
+
+IMPORTANT!: if DEBUG == False, script also return 'path/to/file.css' (no compile sass to css)
+
+tested in ubuntu only
+
+
